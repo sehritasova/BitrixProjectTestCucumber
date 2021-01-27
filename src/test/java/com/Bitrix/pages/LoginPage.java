@@ -51,10 +51,6 @@ public class LoginPage extends BasePage{
         password.sendKeys(passwordValue, Keys.ENTER);
 
 
-
-
-
-
     }
 
 }
