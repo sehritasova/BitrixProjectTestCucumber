@@ -3,7 +3,7 @@ Feature:As a user, I should be able to login to the Bitrix App
   @login_valid
   Scenario:Login with valid credentials
     Given user is on the login page
-    When user logs in as a "hepdesk"
+    When user logs in as a "marketing"
     And click on "Log in" option
     Then user should see dashboard page
 
