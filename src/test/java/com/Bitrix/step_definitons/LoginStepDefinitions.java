@@ -1,15 +1,19 @@
 package com.Bitrix.step_definitons;
 
+import com.Bitrix.pages.BasePage;
 import com.Bitrix.pages.LoginPage;
 import com.Bitrix.utils.ConfigurationReader;
 import com.Bitrix.utils.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class LoginStepDefinitions {
 
     LoginPage loginPage = new LoginPage();
+
+
 
 
     @Given("user is on the login page")
@@ -23,15 +27,15 @@ public class LoginStepDefinitions {
 
 
     }
-    @When("click on {string} option")
-    public void click_on_option(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
+
     @Then("user should see dashboard page")
     public void user_should_see_dashboard_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        String expected = "CRM";
+       // String actual= loginPage.getPageSubTitleText().trim();
+        String actual= loginPage.getCrmTitleText();
+        Assert.assertEquals("I see dashboard", expected, actual);
+
     }
 
 
