@@ -25,7 +25,8 @@ Feature:As a user, I should be able to login to the app
 
   @forgot_link
   Scenario:Access to "FORGOT YOUR PASSWORD?" link page
-    Given user logs in with "invalid" username and "wrong" password
+    Given user is on the login page
+    And user logs in with "helpdesk" username and "wrong" password
     When click to "FORGOT YOUR PASSWORD?" link page
     Then users see "Get Password" page
 

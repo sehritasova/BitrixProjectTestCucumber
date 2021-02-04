@@ -46,13 +46,13 @@ public class LoginStepDefinitions {
 
     @Given("user logs in with {string} username and {string} password")
     public void user_logs_in_with_username_and_password(String string, String string2) {
-        loginPage.login(string,string2);
+        loginPage.login();
     }
 
     @When("click to {string} link page")
     public void click_to_link_page(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        loginPage.getForgotLink();
+
     }
     @Then("users see {string} page")
     public void users_see_page(String string) {

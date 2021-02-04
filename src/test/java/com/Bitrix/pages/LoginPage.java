@@ -24,6 +24,9 @@ public class LoginPage extends BasePage{
     @FindBy(className = "errortext")
     private WebElement error_message;
 
+    @FindBy(className = "login-link-forgot-pass")
+    private WebElement forgot_link;
+
 
 
 
@@ -77,6 +80,10 @@ public class LoginPage extends BasePage{
 
     public String getErrorMessage(){
         return error_message.getText();
+    }
+
+    public void getForgotLink(){
+        forgot_link.click();
     }
 
 }
