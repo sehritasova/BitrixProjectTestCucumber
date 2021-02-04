@@ -14,12 +14,13 @@ Feature:As a user, I should be able to login to the app
       | hr        | UserUser |
       | marketing | UserUser |
 
+
   @check_remember_option
   Scenario:Check "Remember me on this computer" option
     Given user is on the login page
     When user enter "<email>" and "<password>"
     And user check "Remember me on this computer" checkbox
-    And user clicks on "Log in" option
+    And user clicks on "Log in" button
     Then user should see dashboard page
 
   @forgot_link
@@ -30,7 +31,7 @@ Feature:As a user, I should be able to login to the app
 
   @invalid_credentials
   Scenario:Login with invalid credentials
-    When user logs in with "invalid" username and "wrong" password
+    When user logs in with "helpdesk" username and "wrong" password
     Then user verifies that "Incorrect login or password" message is displayed
 
 

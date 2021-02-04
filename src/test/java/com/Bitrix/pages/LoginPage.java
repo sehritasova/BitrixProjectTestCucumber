@@ -21,11 +21,15 @@ public class LoginPage extends BasePage{
     @FindBy(id = "USER_REMEMBER")
     private WebElement check_remember;
 
+    @FindBy(className = "errortext")
+    private WebElement error_message;
+
+
 
 
     public void login(String usernameValue, String passwordValue){
         username.sendKeys(usernameValue);
-        password.sendKeys(passwordValue);
+        password.sendKeys(passwordValue, Keys.ENTER);
 
     }
 
@@ -62,13 +66,17 @@ public class LoginPage extends BasePage{
 
 
 
-
     public void setCheck_remember(){
         if (check_remember.isSelected()){
             System.out.println("Remember me checkbox is checked");
         }else{
             System.out.println("Remember me checkbox is not checked");
         }
+    }
+
+
+    public String getErrorMessage(){
+        return error_message.getText();
     }
 
 }
