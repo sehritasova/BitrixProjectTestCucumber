@@ -8,14 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 public abstract class BasePage {
 
 
-    @FindBy(id = "header-inner")
-    private WebElement pageSubtitle;
-
-
     @FindBy(className = "logo-text")
-            private WebElement Crm;
-
-
+    private WebElement Crm;
 
 
     public BasePage() {
@@ -23,9 +17,6 @@ public abstract class BasePage {
     }
 
 
-    public String getPageSubTitleText(){
-        return pageSubtitle.getText();
-    }
 
     public String getCrmTitleText(){
         return Crm.getText();

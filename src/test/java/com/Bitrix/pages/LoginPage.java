@@ -18,11 +18,14 @@ public class LoginPage extends BasePage{
     @FindBy(className = "login-btn")
     private WebElement logInBtn;
 
+    @FindBy(id = "USER_REMEMBER")
+    private WebElement check_remember;
+
 
 
     public void login(String usernameValue, String passwordValue){
         username.sendKeys(usernameValue);
-        password.sendKeys(passwordValue, Keys.ENTER);
+        password.sendKeys(passwordValue);
 
     }
 
@@ -31,7 +34,8 @@ public class LoginPage extends BasePage{
         String passwordValue = ConfigurationReader.getProperty("password");
 
         username.sendKeys(usernameValue);
-        password.sendKeys(passwordValue, Keys.ENTER);
+        password.sendKeys(passwordValue);
+
 
     }
 
@@ -48,8 +52,23 @@ public class LoginPage extends BasePage{
         }
 
         username.sendKeys(usernameValue);
-        password.sendKeys(passwordValue, Keys.ENTER);
+        password.sendKeys(passwordValue);
 
+    }
+
+   public void setLogInBtn(){
+       logInBtn.click();
+    }
+
+
+
+
+    public void setCheck_remember(){
+        if (check_remember.isSelected()){
+            System.out.println("Remember me checkbox is checked");
+        }else{
+            System.out.println("Remember me checkbox is not checked");
+        }
     }
 
 }
