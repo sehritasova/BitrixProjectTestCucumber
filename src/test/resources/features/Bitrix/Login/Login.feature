@@ -31,14 +31,11 @@ Feature:As a user, I should be able to login to the app
     Then  "Get Password" page displayed
 
   @invalid_credentials
-  Scenario Outline:Login with invalid credentials
-    When user logs in with "<username>" username and "<wrong>" password
+  Scenario:Login with invalid credentials
+    Given user is on the login page
+    When user logs in with "username" username and "wrong" password
     Then user verifies that "Incorrect login or password" message is displayed
-    Examples:
 
-      | username | wrong  |
-      | wrong    | wrong  |
-      | asdk     | asdkgh |
 
 
 

@@ -56,13 +56,20 @@ public class LoginStepDefinitions {
 
 
 
-
-
     @Then("{string} page displayed")
     public void page_displayed(String string) {
         loginPage.verifyTitle(string);
 
     }
+
+
+    @Then("user verifies that {string} message is displayed")
+    public void user_verifies_that_message_is_displayed(String expected) {
+        String actualResult = loginPage.getErrorMessage();
+        Assert.assertEquals(expected, actualResult);
+
+    }
+
 
 
 
