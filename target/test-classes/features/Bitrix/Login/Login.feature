@@ -27,13 +27,20 @@ Feature:As a user, I should be able to login to the app
   Scenario:Access to "FORGOT YOUR PASSWORD?" link page
     Given user is on the login page
     And user logs in with "helpdesk" username and "wrong" password
-    When click to "FORGOT YOUR PASSWORD?" link page
-    Then users see "Get Password" page
+    When navigates to "FORGOT YOUR PASSWORD?" link page
+    Then  "Get Password" page displayed
 
   @invalid_credentials
-  Scenario:Login with invalid credentials
-    When user logs in with "helpdesk" username and "wrong" password
+  Scenario Outline:Login with invalid credentials
+    When user logs in with "<username>" username and "<wrong>" password
     Then user verifies that "Incorrect login or password" message is displayed
+    Examples:
+
+      | username | wrong  |
+      | wrong    | wrong  |
+      | asdk     | asdkgh |
+
+
 
 
 

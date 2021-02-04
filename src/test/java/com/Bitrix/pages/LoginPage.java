@@ -1,10 +1,12 @@
 package com.Bitrix.pages;
 
+import com.Bitrix.utils.BrowserUtils;
 import com.Bitrix.utils.ConfigurationReader;
 import com.sun.tools.internal.jxc.ConfigReader;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage{
 
@@ -27,22 +29,23 @@ public class LoginPage extends BasePage{
     @FindBy(className = "login-link-forgot-pass")
     private WebElement forgot_link;
 
+    @FindBy(className = "log-popup-header")
+    private WebElement getPasswordPage;
 
 
 
-    public void login(String usernameValue, String passwordValue){
-        username.sendKeys(usernameValue);
-        password.sendKeys(passwordValue, Keys.ENTER);
+    public void login(String worngUsername, String wrongPassword) {
+        wait.until(ExpectedConditions.visibilityOf(username)).sendKeys(worngUsername);
+        wait.until(ExpectedConditions.visibilityOf(password)).sendKeys(wrongPassword, Keys.ENTER);
+
 
     }
-
     public void login(){
         String usernameValue = ConfigurationReader.getProperty("helpdesk_username");
         String passwordValue = ConfigurationReader.getProperty("password");
 
         username.sendKeys(usernameValue);
         password.sendKeys(passwordValue);
-
 
     }
 
@@ -83,7 +86,13 @@ public class LoginPage extends BasePage{
     }
 
     public void getForgotLink(){
-        forgot_link.click();
+      BrowserUtils.clickOnElement(forgot_link);
     }
+
+    public void setGetPasswordPage(){
+        BrowserUtils.clickOnElement(getPasswordPage);
+    }
+
+
 
 }
