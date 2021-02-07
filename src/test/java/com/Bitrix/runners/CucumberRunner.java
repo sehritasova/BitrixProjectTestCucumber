@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/Bitrix/Login",
         glue="com/Bitrix/step_definitions",
         dryRun = false,
-        tags="@invalid_credentials"
+        tags="@smoke_login"
 
 )
 

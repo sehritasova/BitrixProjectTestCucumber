@@ -1,4 +1,4 @@
-
+@smoke_login
 Feature:As a user, I should be able to login to the app
 
   @login_with_valid_credentials

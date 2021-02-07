@@ -22,8 +22,8 @@ public abstract class BasePage {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
 
-    public void navigateTo(String tabName){
-        wait.until(ExpectedConditions.elementToBeClickable(By.linkText(tabName))).click();
+    public void navigateTo(String link){
+        wait.until(ExpectedConditions.elementToBeClickable(By.linkText(link))).click();
     }
 
     public void verifyTitle(String expectedPageTitle){
