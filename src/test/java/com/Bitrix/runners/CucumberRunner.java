@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features/Bitrix",
-        glue="com/Bitrix/step_definitons",
+        glue= "com/Bitrix/step_definitions",
         dryRun = false,
-        tags="@login_valid"
+        tags="@smoke_login"
 
 )
 
