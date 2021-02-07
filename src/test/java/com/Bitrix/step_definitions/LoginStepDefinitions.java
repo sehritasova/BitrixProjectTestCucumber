@@ -49,18 +49,6 @@ import org.junit.Assert;
             loginPage.login(string, string2);
         }
 
-        @When("navigates to {string} link page")
-        public void navigates_to_link_page(String string) {
-            loginPage.navigateTo(string);
-        }
-
-
-
-        @Then("{string} page displayed")
-        public void page_displayed(String string) {
-            loginPage.verifyTitle(string);
-
-        }
 
 
         @Then("user verifies that {string} message is displayed")
@@ -71,18 +59,12 @@ import org.junit.Assert;
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        @When("navigates to {string} link page")
+        public void navigates_to_link_page(String string) {
+            loginPage.navigateTo(string);
+        }
+        @Then("{string} page displayed")
+        public void page_displayed(String string) {
+            loginPage.verifyTitle(string);
+        }
     }

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/Bitrix",
+        features = "src/test/resources/features/Bitrix/Login",
         glue= "com/Bitrix/step_definitions",
         dryRun = false,
         tags="@smoke_login"
